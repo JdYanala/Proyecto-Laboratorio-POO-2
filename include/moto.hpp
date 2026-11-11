@@ -6,11 +6,16 @@ private:
     int cilindraje;
 public:
     Moto(string,int);
+    Moto(string,int, Propietario*);
     ~Moto();
     bool altoCilindraje();
 };
 
 Moto::Moto(string placa,int  cilindraje):Vehiculo(placa),cilindraje(cilindraje)
+{
+}
+
+Moto::Moto(string placa, int cilindraje, Propietario* propietario):Vehiculo(placa, propietario),cilindraje(cilindraje)
 {
 }
 
