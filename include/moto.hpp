@@ -3,16 +3,21 @@
 class Moto: public Vehiculo
 {
 private:
-    /* data */
+    int cilindraje;
 public:
-    Moto(/* args */);
+    Moto(string,int);
     ~Moto();
+    bool altoCilindraje();
 };
 
-Moto::Moto(/* args */)
+Moto::Moto(string placa,int  cilindraje):Vehiculo(placa),cilindraje(cilindraje)
 {
 }
 
 Moto::~Moto()
 {
+}
+
+bool Moto::altoCilindraje(){
+    return cilindraje>400;
 }

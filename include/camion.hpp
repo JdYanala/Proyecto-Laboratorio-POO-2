@@ -3,16 +3,33 @@
 class Camion : public Vehiculo
 {
 private:
-    /* data */
+    int ejes;
 public:
-    Camion : public Vehiculo(/* args */);
-    ~Camion : public Vehiculo();
+    Camion(string,int);
+    ~Camion();
+    void agregarEjes(int);
 };
 
-Camion : public Vehiculo::Camion : public Vehiculo(/* args */)
+Camion::Camion(string placa, int ejes):Vehiculo(placa)
+{  
+    try
+    {
+        if(ejes>0){
+            this->ejes=ejes;
+        }else{
+            throw runtime_error("<Cantidad ejes Invalida> -> CANTIDAD DE EJES MENOR O A 2");
+        }
+    }
+    catch(exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+}
+
+Camion::~Camion()
 {
 }
 
-Camion : public Vehiculo::~Camion : public Vehiculo()
-{
+void Camion::agregarEjes(int cant){
+    ejes+=cant;
 }

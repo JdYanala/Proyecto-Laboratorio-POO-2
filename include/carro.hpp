@@ -3,16 +3,34 @@
 class Carro:public Vehiculo
 {
 private:
-    /* data */
+    int pasajeros;
 public:
-    Carro(/* args */);
+    Carro(string,int);
     ~Carro();
+    void subirPasajeros(int);
 };
 
-Carro::Carro(/* args */)
+Carro::Carro(string placa, int pasajeros):Vehiculo(placa)
 {
+    try
+    {
+        if(pasajeros>0){
+            this->pasajeros=pasajeros;
+        }else{
+            throw runtime_error("<Cantidad Pasajeros Invalida> -> CANTIDAD DE PASAJEROS MENOR O IGUAL A 0");
+        }
+    }
+    catch(exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
 }
 
 Carro::~Carro()
 {
+}
+
+void Carro::subirPasajeros(int cant){
+    pasajeros+=cant;
 }
