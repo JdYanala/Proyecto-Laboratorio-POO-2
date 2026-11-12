@@ -1,39 +1,36 @@
 #include "../include/carro.hpp"
+#include "../include/Excepciones.hpp"
 
-
-Carro::Carro(string placa, int pasajeros, string categoria, Propietario* propietario):Vehiculo(placa, propietario, categoria)
+Carro::Carro(string placa, int pasajeros, string categoria, Propietario *propietario) : Vehiculo(placa, propietario, categoria)
 {
-    try
-    {
-        if(pasajeros>0){
-            this->pasajeros=pasajeros;
-        }else{
-            throw runtime_error("<Cantidad Pasajeros Invalida> -> CANTIDAD DE PASAJEROS MENOR O IGUAL A 0");
-        }
-    }
-    catch(exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
-}
 
+    if (pasajeros > 0)
+    {
+        this->pasajeros = pasajeros;
+    }
+    else
+    {
+        throw ExcepcionDatosInvalidos("<Cantidad Pasajeros Invalida> - Cantidad de pasajeros menor o igual a 0");
+    }
+}
 
 
 Carro::~Carro()
 {
 }
 
-void Carro::subirPasajeros(int cant){
-    pasajeros+=cant;
+void Carro::subirPasajeros(int cant)
+{
+    pasajeros += cant;
 }
 
-int Carro::calcularTarifa(){
-    int tarifa = 10000+200*u;
+int Carro::calcularTarifa()
+{
+    int tarifa = 10000 + 200 * u;
 
-    if(getPropietario()->getEsVecino()==true){
-        return tarifa*((100-(30+c))/100);
+    if (getPropietario()->getEsVecino() == true)
+    {
+        return tarifa * ((100 - (30 + c)) / 100);
     }
     return tarifa;
 }
-
