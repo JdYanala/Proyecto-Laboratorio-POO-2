@@ -7,3 +7,7 @@ Persona::Persona(string nombre,int documento,string descripcion):nombre(nombre),
 Persona::~Persona()
 {
 }
+
+string Persona::getNombre() const{
+    return nombre;
+}

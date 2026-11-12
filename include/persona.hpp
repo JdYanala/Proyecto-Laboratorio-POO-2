@@ -11,6 +11,7 @@ private:
 public:
     Persona(string,int,string);
     virtual ~Persona();
+    string getNombre()const;
 };
 
 

@@ -14,6 +14,7 @@ private:
     string placa;
     Propietario *propietario;
     string categoria;
+    
 public:
     Vehiculo(string);
     Vehiculo(string,Propietario*,string);
@@ -22,6 +23,8 @@ public:
     Propietario* getPropietario() const;
     string getPlaca() const;
     string getCategoria() const;
+    string getDetalles() const;
+   
 };
 
 #endif

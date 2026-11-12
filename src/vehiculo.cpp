@@ -33,3 +33,14 @@ string Vehiculo::getCategoria() const
 {
     return categoria;
 }
+
+string Vehiculo::getDetalles() const
+{
+    string msg = "  Placa: " + placa+"\n  Categoria: " + categoria + "\n  Nombre Propietario: ";
+    if(propietario!=nullptr)
+    {
+        msg+= propietario->getNombre();
+    }
+
+    return msg;
+}
