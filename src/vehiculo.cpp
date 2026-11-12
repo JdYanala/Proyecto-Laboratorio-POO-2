@@ -9,3 +9,8 @@ Vehiculo::Vehiculo(string placa,Propietario *propietario):placa(placa),propietar
 Vehiculo::~Vehiculo()
 {
 }
+
+Propietario* Vehiculo::getPropietario() const
+{
+    return propietario;
+}

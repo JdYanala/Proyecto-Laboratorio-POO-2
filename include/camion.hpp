@@ -9,6 +9,7 @@ public:
     Camion(string,int, Propietario*);
     ~Camion();
     void agregarEjes(int);
+    int calcularTarifa() override;
 };
 
 Camion::Camion(string placa, int ejes):Vehiculo(placa)
@@ -49,4 +50,8 @@ Camion::Camion(string placa, int ejes, Propietario* propietario):Vehiculo(placa,
     {
         std::cerr << e.what() << '\n';
     }
+}
+
+int Camion::calcularTarifa(){
+    return (8000+100*d)*ejes;
 }

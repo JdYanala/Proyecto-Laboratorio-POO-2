@@ -6,8 +6,10 @@ private:
     int puestos;
 public:
     Bus(string,int);
-     Bus(string,int,);
+     Bus(string,int, Propietario*);
     ~Bus();
+    int calcularTarifa() override;
+
 };
 
 Bus::Bus(string placa,int puestos):Vehiculo(placa)
@@ -44,4 +46,8 @@ Bus::Bus(string placa,int puestos, Propietario* propietario):Vehiculo(placa, pro
 
 Bus::~Bus()
 {
+}
+
+int Bus::calcularTarifa(){
+    return (14000+300*d);
 }

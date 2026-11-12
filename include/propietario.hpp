@@ -7,6 +7,7 @@ private:
 public:
     Propietario (string,int,string,bool);
     ~Propietario ();
+    bool getEsVecino() const;
 };
 
 Propietario ::Propietario (string nombre,int documento,string descripcion,bool vecino ):Persona(nombre,documento,descripcion),esVecino(vecino)
@@ -15,4 +16,9 @@ Propietario ::Propietario (string nombre,int documento,string descripcion,bool v
 
 Propietario ::~Propietario ()
 {
+}
+
+bool Propietario ::getEsVecino() const
+{
+    return esVecino;
 }
