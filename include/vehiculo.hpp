@@ -13,12 +13,15 @@ class Vehiculo
 private:
     string placa;
     Propietario *propietario;
+    string categoria;
 public:
     Vehiculo(string);
-    Vehiculo(string,Propietario*);
+    Vehiculo(string,Propietario*,string);
     virtual ~Vehiculo();
     virtual int calcularTarifa() = 0;
     Propietario* getPropietario() const;
+    string getPlaca() const;
+    string getCategoria() const;
 };
 
 #endif

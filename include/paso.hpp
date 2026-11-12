@@ -1,5 +1,6 @@
-#ifdef PASO_HPP
+#ifndef PASO_HPP
 #define PASO_HPP
+#include <string>
 #include <iostream>
 using namespace std;
 
@@ -8,20 +9,15 @@ class Paso
 private:
     string placa;
     string categoria;
-    float tarifa;
+    int tarifa;
 public:
-    Paso(string, string, float);
+    Paso(string, string, int);
+    Paso();
     ~Paso();
+    string getCategoria() const;
+    int getTarifa() const;
+    string getPlaca() const;
 };
-
-Paso::Paso(string placa, string categoria, float tarifa) : placa(placa), categoria(categoria), tarifa(tarifa)
-{
-}
-
-
-Paso::~Paso()
-{
-}
 
 
 
