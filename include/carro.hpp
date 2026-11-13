@@ -9,6 +9,7 @@ public:
     ~Carro();
     void subirPasajeros(int);
     int calcularTarifa() override;
+    string getDetalles() override;
 };
 
 

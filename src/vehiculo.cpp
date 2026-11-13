@@ -34,7 +34,7 @@ string Vehiculo::getCategoria() const
     return categoria;
 }
 
-string Vehiculo::getDetalles() const
+string Vehiculo::getDetalles()
 {
     string msg = "  Placa: " + placa+"\n  Categoria: " + categoria + "\n  Nombre Propietario: ";
     if(propietario!=nullptr)
@@ -43,4 +43,10 @@ string Vehiculo::getDetalles() const
     }
 
     return msg;
+}
+
+ostream& operator<<(ostream& os, Vehiculo& vehiculo)
+{
+    os << vehiculo.getDetalles();
+    return os;
 }

@@ -23,8 +23,8 @@ public:
     Propietario* getPropietario() const;
     string getPlaca() const;
     string getCategoria() const;
-    string getDetalles() const;
+    virtual string getDetalles();
    
 };
-
+ostream& operator<<(ostream&, Vehiculo&);
 #endif

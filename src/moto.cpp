@@ -22,3 +22,18 @@ int  Moto::calcularTarifa(){
     return tarifa;
 }
 
+string Moto::getDetalles()
+{
+    string tipoCilindraje;
+    if(cilindraje>400){
+       tipoCilindraje="Alta Cilindraje";
+    }
+    else{
+
+        tipoCilindraje="Bajo Cilindraje";
+    }
+    
+    string msg = Vehiculo::getDetalles() + "\n  Cilindraje: " + to_string(cilindraje) + "\n  Tipo de Moto: " + tipoCilindraje;
+    return msg;
+}
+

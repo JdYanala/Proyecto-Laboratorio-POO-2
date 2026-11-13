@@ -24,3 +24,9 @@ Bus::~Bus()
 int Bus::calcularTarifa(){
     return (14000+300*d);
 }
+
+string Bus::getDetalles()
+{
+    string msg = Vehiculo::getDetalles() + "\n  Puestos: " + to_string(puestos);
+    return msg;
+}

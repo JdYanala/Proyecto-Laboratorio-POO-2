@@ -26,3 +26,9 @@ int Camion::calcularTarifa()
 {
     return (8000 + 100 * d) * ejes;
 }
+
+string Camion::getDetalles()
+{
+    string msg = Vehiculo::getDetalles() + "\n  Ejes: " + to_string(ejes);
+    return msg;
+}

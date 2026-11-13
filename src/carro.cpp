@@ -34,3 +34,8 @@ int Carro::calcularTarifa()
     }
     return tarifa;
 }
+string Carro::getDetalles()
+{
+    string msg = Vehiculo::getDetalles() + "\n  Pasajeros: " + to_string(pasajeros);
+    return msg;
+}

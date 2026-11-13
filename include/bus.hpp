@@ -9,6 +9,7 @@ public:
      Bus(string,int,string, Propietario*);
     ~Bus();
     int calcularTarifa() override;
+    string getDetalles() override;
 
 };
 

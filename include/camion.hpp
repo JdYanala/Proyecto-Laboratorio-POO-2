@@ -10,6 +10,7 @@ public:
     ~Camion();
     void agregarEjes(int);
     int calcularTarifa() override;
+    string getDetalles() override;
 };
 
 

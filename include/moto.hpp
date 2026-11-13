@@ -9,5 +9,6 @@ public:
     ~Moto();
     bool altoCilindraje();
     int calcularTarifa() override;
+    string getDetalles() override;
 };
 
