@@ -16,6 +16,7 @@ Bus::Bus(string placa, int puestos, string categoria, Propietario *propietario) 
 
 Bus::~Bus()
 {
+    cout << "   Destruyendo desde clase Bus a: " << getPlaca() << endl;
 }
 
 int Bus::calcularTarifa()

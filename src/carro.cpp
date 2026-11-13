@@ -17,6 +17,7 @@ Carro::Carro(string placa, int pasajeros, string categoria, Propietario *propiet
 
 Carro::~Carro()
 {
+    cout << "   Destruyendo desde clase Carro a: " << getPlaca() << endl;
 }
 
 void Carro::subirPasajeros(int cant)

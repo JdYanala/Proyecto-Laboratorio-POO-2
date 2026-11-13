@@ -25,7 +25,7 @@ Vehiculo::Vehiculo(string placa, Propietario *propietario, string categoria) : p
 }
 Vehiculo::~Vehiculo()
 {
-    cout << "Destruyendo " << categoria << " " << placa << endl;
+    cout << "       Destruyendo desde clase Vehiculo al Vehiculo : " << categoria << " " << placa << endl;
 }
 Propietario *Vehiculo::getPropietario() const
 {

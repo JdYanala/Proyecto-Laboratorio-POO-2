@@ -4,6 +4,12 @@ Caseta::Caseta(Operador* operador):operador(operador)
 {
     numeroDePasos = 0;
     dineroRecaudado = 0;
+    conteo={
+        {"Carro", 0},
+        {"Moto", 0},
+        {"Bus", 0},
+        {"Camion", 0}
+    };
 }
 
 Caseta::~Caseta()
@@ -28,4 +34,30 @@ void Caseta::agregarPaso(Vehiculo* vehiculo)
     pasos.push_back(new Paso(vehiculo->getPlaca(), vehiculo->getCategoria(), tarifa));
     numeroDePasos++;
     dineroRecaudado += tarifa;
+    if(vehiculo->getCategoria() == "Carro")
+    {
+        conteo["Carro"]++;
+    }
+    else if(vehiculo->getCategoria() == "Moto")
+    {
+        conteo["Moto"]++;
+    }
+    else if(vehiculo->getCategoria() == "Bus")
+    {
+        conteo["Bus"]++;
+    }
+    else if(vehiculo->getCategoria() == "Camion")
+    {
+        conteo["Camion"]++;
+    }
+}
+
+int Caseta::getDineroRecaudado() const
+{
+    return dineroRecaudado;
+}
+
+map<string, int> Caseta::getConteo() const
+{
+    return conteo;
 }

@@ -2,6 +2,7 @@
 #include "../include/Excepciones.hpp"
 Camion::~Camion()
 {
+    cout << "   Destruyendo desde clase Camion a: " << getPlaca() << endl;
 }
 
 void Camion::agregarEjes(int cant)

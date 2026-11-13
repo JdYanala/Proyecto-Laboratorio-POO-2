@@ -7,6 +7,7 @@ Moto::Moto(string placa, int cilindraje,string categoria, Propietario* propietar
 
 Moto::~Moto()
 {
+    cout << "   Destruyendo desde clase Moto a: " << getPlaca() << endl;
 }
 
 bool Moto::altoCilindraje(){
