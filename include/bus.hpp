@@ -1,3 +1,5 @@
+#ifndef BUS_HPP
+#define BUS_HPP
 #include "vehiculo.hpp"
 
 class Bus : public Vehiculo
@@ -12,5 +14,5 @@ public:
     string getDetalles() override;
 
 };
-
+#endif
 

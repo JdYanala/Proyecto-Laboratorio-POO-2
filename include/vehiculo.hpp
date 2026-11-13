@@ -3,10 +3,7 @@
 
 #include <iostream>
 #include "propietario.hpp"
-//Codigo Estudiantil: 104626011541 | Tres Ultimos Digitos: 541
-int c= 5;
-int d=4;
-int u=1;
+#include "CodigoEstudiantil.h"
 using namespace std;
 class Vehiculo
 {
@@ -24,6 +21,7 @@ public:
     string getPlaca() const;
     string getCategoria() const;
     virtual string getDetalles();
+    
    
 };
 ostream& operator<<(ostream&, Vehiculo&);

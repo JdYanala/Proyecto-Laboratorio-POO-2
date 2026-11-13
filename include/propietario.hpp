@@ -1,3 +1,6 @@
+#ifndef PROPIETARIO_HPP
+#define PROPIETARIO_HPP
+
 #include "persona.hpp"
 
 class Propietario : public Persona
@@ -9,4 +12,4 @@ public:
     ~Propietario ();
     bool getEsVecino() const;
 };
-
+#endif

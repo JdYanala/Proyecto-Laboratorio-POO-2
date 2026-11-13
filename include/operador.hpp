@@ -1,3 +1,5 @@
+#ifndef OPERADOR_HPP
+#define OPERADOR_HPP
 #include "persona.hpp"
 class Operador : public Persona
 {
@@ -7,5 +9,5 @@ public:
     Operador(string,int,string,int);
     ~Operador();
 };
-
+#endif
 

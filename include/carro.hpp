@@ -1,3 +1,5 @@
+#ifndef CARRO_HPP
+#define CARRO_HPP
 #include "vehiculo.hpp"
 
 class Carro:public Vehiculo
@@ -12,5 +14,5 @@ public:
     string getDetalles() override;
 };
 
-
+#endif
 

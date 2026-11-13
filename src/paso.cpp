@@ -26,3 +26,9 @@ string Paso::getPlaca() const
 {
     return placa;
 }
+
+ostream& operator<<(ostream& os, Paso& paso)
+{   
+    os << "Placa: " << paso.getPlaca() << ", Categoria: " << paso.getCategoria() << ", Tarifa: " << paso.getTarifa();
+    return os;
+}

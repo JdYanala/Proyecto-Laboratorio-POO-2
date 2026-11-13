@@ -17,6 +17,7 @@ public:
     string getCategoria() const;
     int getTarifa() const;
     string getPlaca() const;
+    friend ostream& operator<<(ostream&, Paso&);
 };
 
 
