@@ -10,7 +10,7 @@
 
 4. Qué hace tu programa si se llama al registro de un paso con un puntero nulo, y por qué
 decidiste eso.
-    R/ Si instancio un registro de paso como un puntero y lo llamo por ejemplo para imprimirlo con la sobrecarga del operador <<, el programa me imprimiria no se rompe y en cambio devuelve un 0. Decidí esto ya que nos permite evitar que el programa se rompa al llamar a un registro nulo.
+    R/ Si instancio un registro de paso como un puntero y lo llamo por ejemplo para imprimirlo , el programa me imprimiria, no se rompe y en cambio devuelve un 0. Decidí esto ya que nos permite evitar que el programa se rompa al llamar a un registro nulo.
 
 
 > [!NOTE]
