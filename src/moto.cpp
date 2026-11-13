@@ -14,10 +14,10 @@ bool Moto::altoCilindraje(){
 }
 
 int  Moto::calcularTarifa(){
-    int tarifa = 3000+200*u;
+    int tarifa = 3000+100*u;
 
     if(getPropietario()->getEsVecino()==true){
-        return tarifa*((100-(30+c))/100);
+        return (tarifa*(100-(30+c)))/100;
     }
     return tarifa;
 }

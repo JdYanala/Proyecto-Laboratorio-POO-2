@@ -21,7 +21,7 @@ public:
     string getPlaca() const;
     string getCategoria() const;
     virtual string getDetalles();
-    
+    void setPropietario(Propietario*);
    
 };
 ostream& operator<<(ostream&, Vehiculo&);

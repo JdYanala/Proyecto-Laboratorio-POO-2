@@ -1,25 +1,33 @@
 #include "..\include\vehiculo.hpp"
 #include "..\include\Excepciones.hpp"
 
-Vehiculo::Vehiculo(string placa):placa(placa)
+Vehiculo::Vehiculo(string placa) : placa(placa)
 {
 }
-Vehiculo::Vehiculo(string placa,Propietario *propietario,string categoria):propietario(propietario),categoria(categoria)
+Vehiculo::Vehiculo(string placa, Propietario *propietario, string categoria) : propietario(propietario), categoria(categoria)
 {
-    if(placa=="")
+    try
     {
-        throw ExcepcionPlacaInvalida("[ERROR DE CREACION DE VEHICULO]: ");
+        if (placa == "")
+        {
+            throw ExcepcionPlacaInvalida("[ERROR DE CREACION DE VEHICULO]: ");
+
+        }
+        else
+        {
+            this->placa = placa;
+        }
     }
-    else
+    catch (const ExcepcionPlacaInvalida &e)
     {
-        this->placa=placa;
+        cerr << e.what() << '\n';
     }
 }
 Vehiculo::~Vehiculo()
 {
-    cout<<"Destruyendo "<<categoria<<" "<<placa<<endl;
+    cout << "Destruyendo " << categoria << " " << placa << endl;
 }
-Propietario* Vehiculo::getPropietario() const
+Propietario *Vehiculo::getPropietario() const
 {
     return propietario;
 }
@@ -36,16 +44,25 @@ string Vehiculo::getCategoria() const
 
 string Vehiculo::getDetalles()
 {
-    string msg = "  Placa: " + placa+"\n  Categoria: " + categoria + "\n  Nombre Propietario: ";
-    if(propietario!=nullptr)
+    string msg = "  Placa: " + placa + "\n  Categoria: " + categoria + "\n  Nombre Propietario: ";
+    if (propietario != nullptr)
     {
-        msg+= propietario->getNombre();
+        msg += propietario->getNombre();
+    }
+    else
+    {
+        msg += "No tiene propietario";
     }
 
     return msg;
 }
 
-ostream& operator<<(ostream& os, Vehiculo& vehiculo)
+void Vehiculo::setPropietario(Propietario *propietario)
+{
+    this->propietario = propietario;
+}
+
+ostream &operator<<(ostream &os, Vehiculo &vehiculo)
 {
     os << vehiculo.getDetalles();
     return os;

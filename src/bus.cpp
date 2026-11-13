@@ -1,19 +1,16 @@
 #include "../include/bus.hpp"
+#include "../include/Excepciones.hpp"
 
-
-Bus::Bus(string placa,int puestos, string categoria, Propietario* propietario):Vehiculo(placa, propietario, categoria), puestos(puestos)
+Bus::Bus(string placa, int puestos, string categoria, Propietario *propietario) : Vehiculo(placa, propietario, categoria), puestos(puestos)
 {
-     try
+
+    if (puestos > 0)
     {
-        if(puestos>0){
-            this->puestos=puestos;
-        }else{
-            throw runtime_error("<Cantidad PUESTOS Invalida> -> CANTIDAD DE PUESTOS MENOR O IGUAL A 0");
-        }
+        this->puestos = puestos;
     }
-    catch(exception& e)
+    else
     {
-        std::cerr << e.what() << '\n';
+        throw ExcepcionDatosInvalidos("<Cantidad PUESTOS Invalida> - CANTIDAD DE PUESTOS MENOR O IGUAL A 0");
     }
 }
 
@@ -21,8 +18,9 @@ Bus::~Bus()
 {
 }
 
-int Bus::calcularTarifa(){
-    return (14000+300*d);
+int Bus::calcularTarifa()
+{
+    return (14000 + 300 * d);
 }
 
 string Bus::getDetalles()

@@ -25,12 +25,13 @@ void Carro::subirPasajeros(int cant)
 }
 
 int Carro::calcularTarifa()
-{
-    int tarifa = 10000 + 200 * u;
+{   
+    int tarifa = 10000 + (200 * u);
 
     if (getPropietario()->getEsVecino() == true)
     {
-        return tarifa * ((100 - (30 + c)) / 100);
+
+        return (tarifa * (100 - (30 + c)) )/100;
     }
     return tarifa;
 }

@@ -11,14 +11,20 @@ void Camion::agregarEjes(int cant)
 
 Camion::Camion(string placa, int ejes, string categoria, Propietario *propietario) : Vehiculo(placa, propietario, categoria)
 {
-
-    if (ejes >= 2)
+    try
     {
-        this->ejes = ejes;
+        if (ejes >= 2)
+        {
+            this->ejes = ejes;
+        }
+        else
+        {
+            throw ExcepcionDatosInvalidos("<Cantidad ejes Invalida> - Cantidad de ejes menor que 2");
+        }
     }
-    else
+    catch (const ExcepcionDatosInvalidos &e)
     {
-        throw ExcepcionDatosInvalidos("<Cantidad ejes Invalida> - Cantidad de ejes menor que 2");
+        cerr << e.what() << '\n';
     }
 }
 
